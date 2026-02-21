@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#zaman-serilerinde-gorunmez-krlmalar-geometrik-analizle-yakalayn" class="md-skip">
+        <a href="#zaman-serilerinde-gorunmez-krlmalar-yakalayn" class="md-skip">
           Skip to content
         </a>
       
@@ -313,21 +313,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#neden-tsi-kullanmalsnz" class="md-nav__link">
+  <a href="#neden-tsi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Neden TSI Kullanmalısınız?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matematigin-gucu-sinyallere-3-farkl-mercekten-baks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Matematiğin Gücü: Sinyallere 3 Farklı Mercekten Bakış
+        Neden TSI?
       
     </span>
   </a>
@@ -407,21 +396,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#neden-tsi-kullanmalsnz" class="md-nav__link">
+  <a href="#neden-tsi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Neden TSI Kullanmalısınız?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matematigin-gucu-sinyallere-3-farkl-mercekten-baks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Matematiğin Gücü: Sinyallere 3 Farklı Mercekten Bakış
+        Neden TSI?
       
     </span>
   </a>
@@ -456,34 +434,22 @@
 
 
 
-<h1 id="zaman-serilerinde-gorunmez-krlmalar-geometrik-analizle-yakalayn">Zaman Serilerinde Görünmez Kırılmaları Geometrik Analizle Yakalayın</h1>
-<p><strong>Tanjant-Sekant Benzerlik İndeksi (TSI)</strong>; klasik korelasyon yöntemlerinin kaçırdığı yapısal değişimleri, çok ölçekli geometrik hizalama ile anında tespit eden yeni nesil bir zaman serisi algoritmasıdır.</p>
+<h1 id="zaman-serilerinde-gorunmez-krlmalar-yakalayn">Zaman Serilerinde Görünmez Kırılmaları Yakalayın</h1>
+<p><strong>TSI Analytics</strong>, klasik korelasyon yöntemlerinin kaçırdığı yapısal değişimleri ve kriz anlarını geometrik analiz ile anında tespit eden yeni nesil bir altyapıdır.</p>
 <hr />
-<h2 id="neden-tsi-kullanmalsnz">Neden TSI Kullanmalısınız?</h2>
-<p>Klasik yöntemler (Korelasyon, DTW) genellikle sinyallerin genliğine (büyüklüğüne) odaklanır. Ancak iki sistem benzer genlikler sergilese bile tamamen farklı geometrik yönlerde evrilebilir. TSI, veriyi bir "rotaya" benzetir ve sistemin davranışsal tutarlılığını ölçer.</p>
+<h2 id="neden-tsi">Neden TSI?</h2>
+<p>Geleneksel yöntemler verinin sadece "büyüklüğüne" (genliğine) odaklanırken, TSI veriyi geometrik bir rota olarak okur. [cite_start]İki sistem benzer değerler üretse bile, davranışsal olarak farklı yönlere gidebilir[cite: 20]. Biz bu yönsel tutarlılığı ölçüyoruz.</p>
 <p>!!! success "TSI'ın Öne Çıkan Avantajları"
-    * <strong><span class="arithmatex">\(O(n)\)</span> Hızında Derin Analiz:</strong> Geleneksel DTW'nin yavaşlığından kurtulun.
-    * <strong>Doğal Gürültü Filtresi:</strong> Türev tabanlı yöntemlere kıyasla gürültü varyansını <strong>4 kat</strong> azaltır. 
-    * <strong>Dış Referanssız Kriz Tespiti:</strong> Yeni <em>Çok Ölçekli Kesişim Alanı (MIA)</em> ve <em>Yapısal Boşluk Metriği (SGM)</em> yöntemleriyle, tek bir sinyalin rejim değiştireceği anı dışarıdan bir veri olmadan erkenden yakalayın.</p>
-<hr />
-<h2 id="matematigin-gucu-sinyallere-3-farkl-mercekten-baks">Matematiğin Gücü: Sinyallere 3 Farklı Mercekten Bakış</h2>
-<p>TSI, sistemin gidişatını tek bir noktadan değil, üç farklı "geometrik gözle" inceler:</p>
-<ol>
-<li><strong>Tanjant (Mikro Ölçek):</strong> Sinyalin anlık yönü.</li>
-<li><strong>Sekant (Orta Ölçek):</strong> Anlık gürültüden arındırılmış kısa vadeli trend.</li>
-<li><strong>Büyük Sekant (Makro Ölçek):</strong> Sistemin uzun vadeli ana gidişatı.</li>
-</ol>
-<p>Bir kriz veya yapısal kırılma (örneğin borsa çöküşü veya sensör arızası) anında bu doğrular birbirinden ayrılır. Algoritma bu ayrışmayı temel denkleminde hesaplar:</p>
-<div class="arithmatex">\[TSI(t) = \exp(-\alpha\theta) \cdot \exp(-\beta D)\]</div>
-<p>Burada <span class="arithmatex">\(\theta\)</span> teğetler arasındaki açısal uyuşmazlığı, <span class="arithmatex">\(D\)</span> ise eğim farkını temsil eder. <span class="arithmatex">\(TSI = 1\)</span> mükemmel uyumu gösterirken, sıfıra yaklaşması tam bir kopuşu ifade eder.</p>
+    * [cite_start]<strong>Hız ve Ölçeklenebilirlik:</strong> Karmaşık zaman bükmesi (DTW) algoritmalarının aksine sistemlerinizi yormadan, O(n) hızında gerçek zamanlı çalışır[cite: 8].
+    * [cite_start]<strong>Doğal Gürültü Filtresi:</strong> Verinize sinyal bozucu filtreler uygulamadan, sekant (kiriş) mantığıyla gürültü etkisini büyük ölçüde minimize eder[cite: 154].
+    * [cite_start]<strong>Erken Uyarı Sistemi:</strong> Dışarıdan bir referans veriye ihtiyaç duymadan, tek bir sinyalin rejim değiştireceği anı "Olay Ufku" yaklaşımıyla önceden yakalar[cite: 130].</p>
 <hr />
 <h2 id="kantlanms-performans">Kanıtlanmış Performans</h2>
-<ul>
-<li><strong>Finans:</strong> Kripto ayı piyasalarında (2022) standart "Elde Tutma" (HODL) stratejisine göre <strong>%28.4</strong> daha yüksek performans.</li>
-<li><strong>Biyomedikal:</strong> EEG veri kümelerinde ön işlemeye gerek kalmadan (sadece %3.8 kayıpla) örüntü yakalama gücü.</li>
-<li><strong>Sentetik Veri:</strong> <span class="arithmatex">\(SNR=10dB\)</span> gürültülü ortamlarda rejim değişikliklerini <strong>%92</strong> doğrulukla tespit etme.</li>
-</ul>
-<p><a href="teknik-dokumantasyon/">TSI Algoritmasının Teknik Dokümantasyonunu İnceleyin -&gt;</a>{ .md-button .md-button--primary }</p>
+<p>Sistemimiz farklı endüstrilerde test edilmiş ve onaylanmıştır:
+* [cite_start]<strong>Finansal Algoritmalar:</strong> Kripto ayı piyasalarında standart "Elde Tutma" (HODL) stratejisine göre <strong>%28.4</strong> daha yüksek getiri[cite: 11].
+* [cite_start]<strong>Biyomedikal Sinyaller:</strong> EEG veri kümelerinde ön işlemeye gerek kalmadan (sadece <strong>%3.8</strong> kayıpla) kritik örüntü yakalama gücü[cite: 11].
+* [cite_start]<strong>Endüstriyel Sensörler:</strong> Gürültülü ortamlarda rejim (faz) değişikliklerini <strong>%92</strong> doğrulukla tespit etme[cite: 10].</p>
+<p><a href="teknik-dokumantasyon/">TSI Teknolojisini ve Çözümlerimizi İnceleyin -&gt;</a>{ .md-button .md-button--primary }</p>
 
 
 

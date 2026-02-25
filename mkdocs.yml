@@ -1,0 +1,35 @@
+site_name: TSI Analytics
+site_description: Zaman Serilerinde Çok Ölçekli Geometrik Analiz
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: blue
+  features:
+    - navigation.tabs
+    - navigation.sections
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Our Technology: technology.md
+  - Case Studies & Performance:
+      - Crypto & Financial Markets: case-studies/finance.md
+      - Biomedical & Health (EEG): case-studies/biomedical.md
+      - Industrial IoT & Wi-Fi: case-studies/iot-sensor.md
+      - Defense & Signal Processing: case-studies/defense.md
+      - Industrial Physics: case-studies/thermodynamics.md
+  - Contact: contact.md

@@ -1,4 +1,5 @@
-site_name: TSI Analytics
+site_name: Oscilla Labs
+site_url: https://oscillalabs.com
 site_description: Zaman Serilerinde Çok Ölçekli Geometrik Analiz
 theme:
   name: material

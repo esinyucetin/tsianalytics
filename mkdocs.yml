@@ -1,36 +1,56 @@
 site_name: Oscilla Labs
 site_url: https://oscillalabs.com
 site_description: Zaman Serilerinde Çok Ölçekli Geometrik Analiz
+
 theme:
   name: material
+  custom_dir: overrides
+  language: tr
   palette:
-    primary: indigo
-    accent: blue
+    # Karanlık ve Aydınlık Mod Geçişi
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Karanlık Moda Geç
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Aydınlık Moda Geç
+
   features:
-    - navigation.tabs
-    - navigation.sections
+    - navigation.tabs              # Üst menü
+    - navigation.tabs.sticky       # Kaydırınca sabit kalan menü
+    - navigation.sections          # Yan menüde gruplandırma
+    - navigation.expand            # Menüleri otomatik aç
+    - navigation.top               # "Yukarı Çık" butonu
+    - navigation.indexes           # Klasör isimlerine tıklanabilirlik
+    - search.suggest               # Akıllı arama önerileri
+    - search.highlight             # Arama sonuçlarını boyama
+    - content.code.copy            # Kod bloklarına "Kopyala" butonu
 
 markdown_extensions:
+  - admonition                     # Bilgi kutucukları (Note, Warning vb.)
+  - pymdownx.details               # Açılır kapanır paneller
+  - pymdownx.tabbed:               # Sekmeli içerik (Örn: Python/Java kodu yan yana)
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
 
-extra_javascript:
-  - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
-nav:
-  - Home: index.md
-  - Our Technology: technology.md
-  - Case Studies & Performance:
-      - Crypto & Financial Markets: case-studies/finance.md
-      - Biomedical & Health (EEG): case-studies/biomedical.md
-      - Industrial IoT & Wi-Fi: case-studies/iot-sensor.md
-      - Defense & Signal Processing: case-studies/defense.md
-      - Industrial Physics: case-studies/thermodynamics.md
-  - Contact: contact.md
+extra_css:
+  - stylesheets/extra.css          # Özel stil dokunuşları için

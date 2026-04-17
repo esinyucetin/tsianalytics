@@ -1,0 +1,27 @@
+/* Başlıkların altındaki çizgileri daha modern yapalım */
+:root {
+    --md-text-font: "Inter", "Roboto", sans-serif;
+    --md-code-font: "Fira Code", "JetBrains Mono", monospace;
+}
+
+/* Ana sayfa butonlarını özelleştirme */
+.md-button--primary {
+    background-color: #008080;
+    border-color: #008080;
+    border-radius: 8px;
+    padding: 0.5em 2em;
+    transition: all 0.3s;
+}
+
+.md-button--primary:hover {
+    background-color: #006666;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Matematiksel formüllerin etrafına hafif bir gölge */
+.Arithmetic {
+    background: rgba(0, 128, 128, 0.05);
+    padding: 10px;
+    border-radius: 4px;
+}
